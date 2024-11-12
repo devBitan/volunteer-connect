@@ -7,11 +7,11 @@ $text-color: #333333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   background: $background-gradient;
   color: $text-color;
   font-family: Arial, sans-serif;
+  gap: 5rem;
 }
 
 .header {
@@ -42,7 +42,7 @@ $text-color: #333333;
     }
 
     .registerButton {
-      background-color: $primary-color;
+      background-color: $secondary-color;
       color: #ffffff;
       padding: 8px 16px;
       border: none;
@@ -52,7 +52,7 @@ $text-color: #333333;
       font-weight: bold;
 
       &:hover {
-        background-color: darken($primary-color, 10%);
+        opacity: 0.9;
       }
     }
   }
@@ -61,6 +61,8 @@ $text-color: #333333;
 .main {
   text-align: center;
   padding: 20px;
+  max-width: 770px;
+  width: 100%;
 
   .title {
     font-size: 2.5rem;

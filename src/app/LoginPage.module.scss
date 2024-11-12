@@ -28,9 +28,9 @@ $text-color: #333333;
     background-color: #ffffff;
     padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
 
     .title {
@@ -61,10 +61,13 @@ $text-color: #333333;
       .input {
         padding: 10px;
         font-size: 1rem;
-        border: 1px solid #ddd;
+        color: #000000;
+        border: 2px solid #ddd;
         border-radius: 5px;
         outline: none;
         transition: border-color 0.3s;
+        background-color: aliceblue;
+        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 
         &:focus {
           border-color: $primary-color;
@@ -81,6 +84,7 @@ $text-color: #333333;
         cursor: pointer;
         font-weight: bold;
         transition: background-color 0.3s;
+        margin-top: 1rem;
 
         &:hover {
           background-color: lighten($secondary-color, 10%);

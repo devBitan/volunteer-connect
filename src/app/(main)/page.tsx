@@ -8,7 +8,7 @@ export default function Home() {
         <header className={styles.header}>
           <div className={styles.logo}>VolunteerConnect</div>
           <div className={styles.authButtons}>
-            <a href="/login" className={styles.link}>
+            <a href="/login" className={styles.registerButton}>
               Iniciar sesión
             </a>
             <a href="/register" className={styles.registerButton}>
