@@ -1,8 +1,20 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../app/DashboardPage.module.scss";
+import Modal from "../common/Modal";
 
 const DashboardPage = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editData, setEditData] = useState(null);
+
+  const handleOpenModal = (data = null) => {
+    setEditData(data);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className={styles.dashboardContainer}>
       <aside className={styles.sidebar}>
@@ -15,7 +27,7 @@ const DashboardPage = () => {
               </a>
             </li>
             <li>
-              <a href="/logout">Cerrar Sesión</a>
+              <a href="/login">Cerrar Sesión</a>
             </li>
           </ul>
         </nav>
@@ -26,7 +38,7 @@ const DashboardPage = () => {
           <h1>Dashboard de Proyectos</h1>
           <div className={styles.headerActions}>
             <button className={styles.primaryButton}>Descargar Reportes</button>
-            <button className={styles.secondaryButton}>Nuevo Proyecto</button>
+            <button className={styles.secondaryButton} onClick={() => handleOpenModal()} >Nuevo Proyecto</button>
             <span className={styles.user}>María García</span>
           </div>
         </header>
@@ -78,7 +90,7 @@ const DashboardPage = () => {
                 <td className={styles.activeStatus}>Activo</td>
                 <td>Juan Pérez</td>
                 <td>
-                  <button className={styles.editButton}>Editar</button>
+                  <button className={styles.editButton} onClick={() => handleOpenModal({ title: "Proyecto 1", description: "Descripción", startDate: "2023-01-01", endDate: "2023-01-10" })}>Editar</button>
                   <button className={styles.deleteButton}>Eliminar</button>
                 </td>
               </tr>
@@ -110,6 +122,12 @@ const DashboardPage = () => {
           </table>
         </section>
       </main>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onSubmit={(data) => console.log(data)}
+        initialData={editData}
+      />
     </div>
   );
 };
