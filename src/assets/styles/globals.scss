@@ -1,0 +1,30 @@
+@import "./variables.scss";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder;
+    color: black;
+}
+
+p {
+    color: $text-gray; 
+    line-height: 1.5;
+    font-weight: 300;
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
